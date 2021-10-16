@@ -19,11 +19,12 @@ const BoxList = () => {
       <h1>Box List</h1>
       <NewBoxForm addBox={addBox} />
       <div>
-        {boxes.map(({ backgroundColor, width, height }) => (
+        {boxes.map(({ backgroundColor, width, height, id }) => (
           <Box
             backgroundColor={backgroundColor}
             width={parseInt(width)}
             height={parseInt(height)}
+            key={id}
           />
         ))}
       </div>

@@ -5,13 +5,16 @@ import NewBoxForm from "./NewBoxForm";
 
 const BoxList = () => {
   const INITIAL_BOXES = [
-    { id: uuid(), backgroundColor: "yellow", width: "100", height: "100" },
-    { id: uuid(), backgroundColor: "blue", width: "150", height: "150" },
+    { id: uuid(), backgroundColor: "yellow", width: "50", height: "50" },
+    { id: uuid(), backgroundColor: "blue", width: "70", height: "70" },
   ];
   const [boxes, setBoxes] = useState(INITIAL_BOXES);
 
   const addBox = (newBox) => {
     setBoxes((boxes) => [...boxes, { ...newBox, id: uuid() }]);
+  };
+  const deleteBox = (boxId) => {
+    setBoxes((boxes) => boxes.filter((b) => b.id !== boxId));
   };
 
   return (
@@ -21,6 +24,7 @@ const BoxList = () => {
       <div>
         {boxes.map(({ backgroundColor, width, height, id }) => (
           <Box
+            deleteBox={() => deleteBox(id)}
             backgroundColor={backgroundColor}
             width={parseInt(width)}
             height={parseInt(height)}
@@ -30,7 +34,6 @@ const BoxList = () => {
       </div>
     </div>
   );
-  // map box
 };
 
 export default BoxList;

@@ -17,7 +17,6 @@ const NewBoxForm = ({ addBox }) => {
   };
 
   const handleSubmit = (e) => {
-    console.log(formData);
     e.preventDefault();
     addBox({ ...formData });
     setFormData(INITIAL_STATE);

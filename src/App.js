@@ -1,5 +1,5 @@
 import "./App.css";
-import BoxList from "./BoxList";
+import BoxList from "./ColorBoxMaker/BoxList";
 
 function App() {
   return (

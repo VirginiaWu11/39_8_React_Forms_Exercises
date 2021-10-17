@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Box from "./Todo";
 import { v4 as uuid } from "uuid";
 import NewTodoForm from "./NewTodoForm";
